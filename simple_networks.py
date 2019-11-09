@@ -60,3 +60,32 @@ for i, j in friendships:
   #each pair is (user_id, num_friends)
   #[(1,3), (), (), (), (), 
     (), (), (), (), ()]
+
+#finding friends of friend: for each of a user's friends, iterate over that person's friends and collect all the results
+  
+  def friends_of_friend_ids_bad(user):
+    #"foaf" abbreviation for "friend of a friend"
+    return [foaf["id"]
+      for friend in user["friends"]     #for each of user's friends
+      for foaf in friend["friends]]     #get each of _their_ friends
+      
+#create a count of mutual friends between users, as well as a helper function to exlcude people already known to the user:
+
+  from collections import Counter
+  
+  def not_the_same(user, other_user):
+  """two uers are not the same if they have different ids"""
+  return user["id"] != other_user["id"]
+  
+  def not_friends(user, other_user):
+  """other_user is not a friend if he's not in user["friends"]
+  return all(not_the_same(friend, other_user) for friend in user["friends"])
+  
+  def friends_of_friend_id(user):
+    return Counter(foaf["id"]
+      for friend in user["friends"] #for each of my friends
+      for foaf in friend["friends"] #count *their* friends
+      if not_the_same(user, foaf)   #who aren't me
+      and not_friends(user, foaf))  #and aren't my friends
+      
+  print(friends_of_friend_ids(users[3])    
