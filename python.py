@@ -118,6 +118,30 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
   for word in document:
      word_counts[word] += 1
       
+  #counter: turns a sequence of values into a defaultdict(int)-like object mapping keys to counts. Primarily used for creating histograms
+  
+  from collections import Counter
+  c = Counter([0, 1, 2, 0)]  # c is (basically) { 0:2, 1:1, 2:1}
+  
+  #gives us a clean way of doing a word count for instance:
+              word_counts = Counter(document)
+              
+  #Counter has a most_common method that's frequently used:
+              #print the 10 most common words and their counts:
+              for word, count in word_counts.most_common(10):
+                print(word, count)
+              
+  #(8) Sets: represent a collection of distinct elements
+              s = set()
+              s.add(1)    #s is now {1}
+              s.add(2)    #s is now {1, 2}
+              s.add(2)    #s is still {1,2} 
+              x = len(s)  #equals 2
+              y = 2 in s  #returns True
+              z = 3 in s  #returns False
+     
+        #sets are convenient for testing memberships
+      
  
   
 
