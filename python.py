@@ -72,6 +72,53 @@ y = X + [4, 5, 6]
 
 #append (more frequently used than concat):
 x = [1, 2, 3]
-x.append(0)    # x = [1, 2, 3, 0]\
+x.append(0)    # x = [1, 2, 3, 0]
+
+#(6) Tuples
+#essentially immutable lists. you can do anything to a tuple that you can do to a list except modify it.
+my_tuple =  (1, 2)
+
+#tuples are a convenient way of returning multiple values from functions:
+def sum_and_product(x, y):
+    return (x+y), (x*y)
+  
+sp = sum_and_product(2,3)    #equals (5, 6)
+s, p = sum_and_product(5, 10) # s equals 15, p equals 50
+
+#(7) Dictionaries
+#associates values with keys, allows you to quickly retrieve the value corresponding to the given key:
+
+  empty_dict = {}
+  grades = {"Trap": 100, "Mega": 90}
+  traps_grades = grades["Trap"]   # to look up Trap's grades
+  
+  #check for existance of a key using in:
+  trap_has_a_grade = "Trap" in grades    # True
+  bradley_has_a_grade = "Bradley" in grades # False
+  
+  #dicts have a get method that returns a default value (instead of raising an exception) when you look up a key that's not in the dict:
+  traps_grades = grades.get("Trap", 0)  # equals 100
+  brads_grades = grades.get("Brad", 0)  # equals 0
+  no_ones_grade = grades.get("No One")  # default is None
+  
+  #assigning key-value pairs, use []
+  grades["Traps"] = 89    # replaces old value of 100
+  grades["Hoang"] = 77    # adds a new entry for Hoang
+  num_students = len(grades)    #equals 3
+  
+  #besides looking a specific keys, we can look at all of them:
+  #.keys()   lists out all keys
+  #.values() lists out all values
+  #.items()  lists out all (key, value) tuples
+  
+  #defaultdict: is like a regular dictionary except that when you try to look up a key that it doesn't contain, it adds a value for it using a zero-argument function
+  from collections import defaultdict
+  
+  word_counts = defaultdict(int)    #int() produces 0
+  for word in document:
+     word_counts[word] += 1
+      
+ 
+  
 
 
