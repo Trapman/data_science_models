@@ -89,3 +89,6 @@ for i, j in friendships:
       and not_friends(user, foaf))  #and aren't my friends
       
   print(friends_of_friend_ids(users[3])    
+  
+#(2) Salaries and Experience:
+
