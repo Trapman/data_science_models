@@ -142,7 +142,26 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
      
         #sets are convenient for testing memberships
       
- 
+      #in is a very fast operator we can use with sets:
+              stopwords_list = ["a", "an", "at"] + hundreds_of_other_words + ["yet", "you"]
+              
+              "zip" in stopwords_list   # False, but have to check every element
+              
+              stopwords_set = set(stopwords_list)
+              zip in stopwords_set                # very fast check: Basically we cast as a SET and use IN for membership.
+              
+      #sets are also good for finding DISTINCT items in a collection
   
-
+  #(9) Control Flow: performing actions conditionally
+             # if
+             # elif
+             # else
+              
+             #ternary if-then-else on one line:    parity = "even" if x % 2 == 0 else "odd"
+              
+             #for/in:      
+              for x in range(10)
+                print(x, "is less than 10")
+             
+             #continue/break
 
