@@ -164,4 +164,29 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
                 print(x, "is less than 10")
              
              #continue/break
+              for x in range(10):
+                if x == 3:
+                  continue   # go immediately to the next iteration
+                if x == 5: 
+                  break      # quit the loop entirely
+              print(x)
+              #this will print 0, 1, 2, and 4
+              
+  #(10) Sorting:
+              x = [4, 1, 2, 3]
+              y = sorted(x)     # is [1,2,3,4], is is unchanged
+              x.sort()          # now x is [1,2,3,4]
+              
+              #you can also sort a list by absolute value from largest to smallest, by using KEY and REVERSE
+              x = sorted([-4, 1, -2, 3], key=abs, reverse=True) # is [-4,3,-2,1]
+              
+              
+  #(11) List Comprehensions: transforms a list into another list by using only certain elements or by transforming elements, or both
+              even_numbers = [x for x in range(5) if x % 2 == 0]  # [0, 2, 4]
+              squares      = [x * x for x in range(5)]            #[0,1,4,9,16]
+              even_squares = [x * x for x in even_numbers]        #[0, 4, 16]
+              
+           #you can also similarily turn lists into dictionaries or sets:
+              square_dicts = { x : x * x for x in range(5) }  # { 0:0, 1:1, 2:4, 3:9, 4:16}
+              square_set   = { x * x for x in [1, -1] }       # { 1 }
 
