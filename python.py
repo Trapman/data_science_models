@@ -131,7 +131,8 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
               for word, count in word_counts.most_common(10):
                 print(word, count)
               
-  #(8) Sets: represent a collection of distinct elements
+  
+#(8) Sets: represent a collection of distinct elements
               s = set()
               s.add(1)    #s is now {1}
               s.add(2)    #s is now {1, 2}
@@ -152,7 +153,7 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
               
       #sets are also good for finding DISTINCT items in a collection
   
-  #(9) Control Flow: performing actions conditionally
+#(9) Control Flow: performing actions conditionally
              # if
              # elif
              # else
@@ -172,7 +173,7 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
               print(x)
               #this will print 0, 1, 2, and 4
               
-  #(10) Sorting:
+#(10) Sorting:
               x = [4, 1, 2, 3]
               y = sorted(x)     # is [1,2,3,4], is is unchanged
               x.sort()          # now x is [1,2,3,4]
@@ -181,7 +182,7 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
               x = sorted([-4, 1, -2, 3], key=abs, reverse=True) # is [-4,3,-2,1]
               
               
-  #(11) List Comprehensions: transforms a list into another list by using only certain elements or by transforming elements, or both
+#(11) List Comprehensions: transforms a list into another list by using only certain elements or by transforming elements, or both
               even_numbers = [x for x in range(5) if x % 2 == 0]  # [0, 2, 4]
               squares      = [x * x for x in range(5)]            #[0,1,4,9,16]
               even_squares = [x * x for x in even_numbers]        #[0, 4, 16]
@@ -190,3 +191,20 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
               square_dicts = { x : x * x for x in range(5) }  # { 0:0, 1:1, 2:4, 3:9, 4:16}
               square_set   = { x * x for x in [1, -1] }       # { 1 }
 
+           #a list comprehension can include multiple for loops:
+              pairs = [(x, y)
+                       for x in range(10)
+                       for y in range(10)            #100 pairs (0,0) (0,1)...(9,8), (9,9)
+                       
+#(12) Generators: a problem with lists is that they can easily grow very large. If you only need to the first few values, then calculating them all is a waste
+        #a generator is something you can iterate over, but whose values are produced only as needed
+        #example of a generating using a yield operator:
+                       def lazy_range(n):
+                            """a lazy version of range"""
+                            i = 0 
+                            while i < 0:
+                                yield i
+                                i += 1
+                       
+                       for i in lazy_range(10): 
+                          do_something_with(i)
