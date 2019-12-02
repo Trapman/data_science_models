@@ -92,4 +92,4 @@ for i, j in friendships:
   
 #(2) Salaries and Experience:
 
-#finish building out examples...
+#write out specific instances here
