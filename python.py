@@ -208,6 +208,35 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
                        
                        for i in lazy_range(10): 
                           do_something_with(i)
+        #note that you can only iterate through a generator once. 
+        #if you need to iterate thoguht something multiple times then you need to recreate the generator each time or use a list.
+        
+     #another way to create a generator is by using for comprehensions wrapped in parentheses:
+      lazy_evens_below_20 = (i for i in lazy_range(20) if i % 2 == 0)
                        
+#(13) Randomness: 
+        import random
+        four_uniform_randoms = [random.random() for _ in range(4)]
+                       #[0.84    #random.random() produces numbers
+                       #0.75     #uniformly between 0 and 1
+                       #0.42     #it's the most random function we'll use
+                       #0.25     #most often
                        
-                       #finish basic overview builds
+        #random.randrange    
+                       random.randrange(10)  #chooses randomly from range(10)   =  [0, 1, 2....9]
+                       random.randrange(3, 6) #chooses randomly from range(3,6) =  [3, 4, 5]
+        #random.shuffle
+                       #randomly reorders the elements of a list
+                       up_to_ten = range(10)
+                       random.shuffle(up_to_ten)
+                       print(up_to_ten)
+        #random.sample
+                       #randomly chooses a sample of elements with no duplicates
+                 
+        #random.choice
+                       #same thing as random.sample, but allows for duplicates
+                      
+ #(14) Object Oriented Programming
+       #allows you to define classes and the functions that operate within them
+                       
+             
