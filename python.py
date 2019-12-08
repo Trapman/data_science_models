@@ -238,5 +238,7 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
                       
  #(14) Object Oriented Programming
        #allows you to define classes and the functions that operate within them
+       def _init_(self, values = None):
+       #this is the constructor. It gets called when you create a new set.
                        
              
