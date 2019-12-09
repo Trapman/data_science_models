@@ -241,4 +241,6 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
        def _init_(self, values = None):
        #this is the constructor. It gets called when you create a new set.
                        
+                       #finish this
+                       
              
