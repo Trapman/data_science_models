@@ -241,6 +241,36 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
        def _init_(self, values = None):
        #this is the constructor. It gets called when you create a new set.
                        
+  
+#(15) Functional Tools
+      #when passing functions around, sometimes we'll want to partially apply (or curry) functions to create new functions
+      #functools.partial
+                       from functools import partial
+                       tow_to_the = partial(exp, 2)
+                       print(two_to_the(3))
+                       
+#(16) Enumerate:
+      #iterate over a list and use both its elements and their indexes 
+      #enumerate produces tuples(index, element):
+                       for i, document in enumerate(documents):         #pythonic
+                          do_something(i, document)
+                       
+                       for i in range(len(documents)):                  #not pythonic
+                          document = documents[i]
+                          do_something(i, document)
+                       
+                       i = 0
+                       for document in documents:
+                          do_something(i, document)
+                          i += 1
+                                      
+                       
+     #similarily, if we just want the indexes:
+                       for i in range(len(documents)): do_something(i)         #not pythonic
+                       
+                       for i, _ in enumerate(documents): do_something(i)        #pythonic
+                       
+                       
                     
                        
              
