@@ -259,7 +259,7 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
                           document = documents[i]
                           do_something(i, document)
                        
-                       i = 0
+                       i = 0                                            #not pythonic
                        for document in documents:
                           do_something(i, document)
                           i += 1
@@ -271,6 +271,22 @@ s, p = sum_and_product(5, 10) # s equals 15, p equals 50
                        for i, _ in enumerate(documents): do_something(i)        #pythonic
                        
                        
-                    
+#(17) Zip and Argument Unpacking: zip()
+      #often we need to zip two or more lists together. ZIP() transforms multiple lists into a single list of tuples of corresponding elements
+      list1 = ['1', 'b', 'c']
+      list2 = [1, 2, 3]
+      zip(list1, list2)   #is [('a', 1), ('b', 2), ('c', 3)]
+                       #if lists are different sizes, zip() stops as soon as the first list ends.
+                       
+      #unzipping: use x, y = zip(*pairs):
+                       pairs = [('a', 1), ('b', 2), ('c', 3)]
+                       letters, numbers = zip(*pairs)
+                       
+                 #the * performs the argument unpacking, returns:
+                       #[('a', 'b', 'c'), ('1', '2', '3')]
+                       
+ #(18) Args and Kwargs
+                       
+       
                        
              
