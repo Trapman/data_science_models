@@ -84,3 +84,12 @@ plt.title("Daily Minutes vs. Number of Friends")
 plt.xlabel("# of Friends")
 plt.ylabel("daily minutes spent on the site")
 plt.show()
+           
+  
+# you can use plt.axis('equal') to more accurately disply any variation
+           
+#more visualization tools:
+           #seaborn
+           #D3.js
+           #Bokeh
+           #ggplot
