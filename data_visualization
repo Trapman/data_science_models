@@ -1,0 +1,24 @@
+#Matplotlib: use for simple bar charts, line charts, and scatterplots.
+
+matplotlib.pyplot
+    #to save: savefig()
+    #to display: show()
+    
+#(1) Bar Charts:
+#good for showing how some quantity varies among some discrete set of items
+
+from matplotlib import pyplot as plt
+
+movies = ['The Irishman', 'Requiem for a Dream', 'Casino']
+num_oscars = [13, 5, 10]
+
+# bars are by default width 0.8, so we'll add 0.1 to the left coordinates so that each bar is centered
+xs = [i + 0.1 for i, _ in enumerate(movies)]
+
+plt.ylabel("# of Academy Awards")
+plt.title("My Favorite Movies")
+
+# label x-axis with movie names at bar centers
+plt.xticks([i + 0.5 for i, _ in enumerate(movies)], movies)
+
+plt.show()
