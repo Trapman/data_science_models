@@ -1,8 +1,13 @@
-#Matplotlib: use for simple bar charts, line charts, and scatterplots.
+# matplotlib ####################################################
+# use for simple bar charts, line charts, and scatterplots: nothing super fancy 
 
-matplotlib.pyplot
-    #to save: savefig()
-    #to display: show()
+# matplotlib.pyplot module ######################################
+# to save result use: savefig()
+# to display results use: show()
+from matplotlib import pyplot as plt
+
+years = [1950, 1960, 1970, 1980, 1990, 2000, 2010, 2020]
+gdp = [300.2, 543.5, 850.5, 1256.6, 2210.3, 6135.9, 12331.1]
     
 #(1) Bar Charts:
 #good for showing how some quantity varies among some discrete set of items
